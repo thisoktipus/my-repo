@@ -2,7 +2,7 @@
 
 **Overview**
 
-Hello! And welcome to an introduction to **Cryptography!** Lets face it. Whether you're a SOHO or a large corporation, seems like every twist and turn bad guys are finding new ways to get to our sensitive data. Thats where cryptography comes in. Cryptography is the practice and study of techniques for securing information and communication mainly to protect the data from third parties (bad guys) that the data is not intended for. Because modern cryptography contains sophisticated algorithms, we will touch on a few key ones. Also we will focus on the strength of different kinds of encryption used today. So without further ado, let's jump in and get to it!
+Welcome to an introduction to **Cryptography!** Lets face it, whether you're an individual or a large corporation, it seems like the bad guys are finding new ways to get to our sensitive data at every twist and turn. Thats where cryptography comes in. Cryptography is the practice and study of techniques for securing information and communication to protect the data from third parties [the bad guys] who the data is not intended for. Because modern cryptography contains sophisticated algorithms, we will touch on a few key types. We will also focus on the strengths of different kinds of encryption used today. So without further ado, let's jump in and get to it!
 
 
 **Workshop Objectives**
@@ -35,11 +35,18 @@ By the end of this lesson we will be able to define and understand:
 
 ## A bit of Cryptography Background
 
-**Caesar cipher** is a substitution cipher in which letters change during encryption. Caeser used a very simple rule to replace each letter with another letter from the alphabet. He shifted letters by 3 places further along in the alphabet where **3** is the **'key'**. For example, the letter **B** would become **E**, and so on. The use of keys in cryptography is integral to creating secure ciphers. By giving the recipient a choice, it makes it harder for an interceptor to decipher the original message. One of the strengths of the Caesar cipher is its ease of use. In addition, encryption and decryption could be done quickly using a wheel. However, these strengths come at a cost of security. There are only a total of 25 encryption keys. Thus, each could be tried until the message was deciphered.
+The **Caesar cipher** is a substitution cipher in which letters change during encryption. Caeser used a very simple rule to replace each letter with another letter from the alphabet. He simply shifted letters by 3 places further along in the alphabet. In this instance, **3** would be the **"key"**. For example, the letter **B** would become **E**,the letter **C** would become **F** and so on. The use of keys in cryptography is integral to creating secure ciphers. By giving the recipient a choice, it makes it harder for an interceptor to decipher the original message. One of the strengths of the Caesar cipher is its ease of use. In addition, encryption and decryption could be done quickly using a wheel. However, these strengths come at a cost of security. There are only a total of 25 encryption keys. Thus, each could be tried until the message was deciphered.
 
 ![Caesar Cipher example](https://www.cdn.geeksforgeeks.org/wp-content/uploads/Caesar-Cipher-3.png)
 
-**Vigenere cipher** is a method of encrypting alphabetic text by employing a series of interwoven Caesar ciphers based on the letters of a keyword. It uses a simple form of polyalphabetic substitution. A **polyalphabetic substitution** is any cipher based on using multiple substitution alphabets. The encryption is done using a Vigenere Square. 
+**Vigenere cipher** is a method of encrypting alphabetic text by employing a series of interwoven Caesar ciphers based on the letters of a keyword. It uses a simple form of polyalphabetic substitution. A **polyalphabetic substitution** is any cipher based on using multiple substitution alphabets. The encryption is done using a Vigenere Square. For example, if one wanted to encrypt the sentance, "Bob went to the store" with the **key** being **dog**, they would decrypt as follows:
+
+**BOB WENT TO THE  STORE**
+**DOG DOGD OG DOG DOGDO**
+
+Next, consult the Vigenere square and you'll match B with D, O with O, B with G and so on. The finished product will look like this:
+
+**ECH ASGW HU WVK VHUUS**
 
 ![Vigenere Cipher example](https://www.researchgate.net/profile/Amin_Subandi/publication/318260132/figure/fig3/AS:513402955104258@1499416211147/Vigenere-Cipher-table.png)
 
@@ -53,34 +60,34 @@ By the end of this lesson we will be able to define and understand:
 
 There are two types of symmetric key encryption:
 
- - **Block algorithms** - A method of encrypting in which a key and algorithm are applied to a block of data instead of one bit at a time. The simplest modes where the message is divided into blocks and encrypted separately is the **Electronic Codebook mode**. 
+ - **Block algorithms** - A method of encrypting in which a key and algorithm are applied to a block of data instead of one bit at a time. The simplest modes in which the message is divided into blocks and encrypted separately is the **Electronic Codebook mode**. 
 ![Electronic Codebook Mode Diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/ECB_encryption.svg/2880px-ECB_encryption.svg.png)
 
- It is common to apply the cipher text from the previously encrypted block to the next block so that blocks do not get encrypted the same way. This is what is called **Cipher Block Chaining**.
+ It is common to apply the cipher text from the previously encrypted block to the next block so the blocks do not get encrypted the same way. This is what is called **Cipher Block Chaining** and provides a more secure incryption.
  ![Ciper Block Chaining Mode Diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/CBC_encryption.svg/2880px-CBC_encryption.svg.png)
  
  - **Stream algorithms** - Data is encrypted as it streams one bit at a time instead of being retained in memory. This method is not commonly used in modern cryptography.
 
-Some examples of symmetric key encryption algorithms are:
+A few examples of symmetric key encryption algorithms are:
 
- - AES - Advanced Encryption Standard
- - DES - Data Encryption Standard
- - IDEA - Internation Data Encryption Algorithm
- - BLOWFISH - Replacement for DES and IDEA
- - RC4 - Rivest Cipher 4
- - RC5 - Rivest Cipher 5
- - RC6 - Rivest Cipher 6
+ - AES - Advanced Encryption Standard - **Block cipher**
+ - DES - Data Encryption Standard - **Block cipher**
+ - IDEA - Internation Data Encryption Algorithm - **Block cipher**
+ - BLOWFISH - Replacement for DES and IDEA - **Block cipher**
+ - RC4 - Rivest Cipher 4 - **Stream cipher**
+ - RC5 - Rivest Cipher 5 - **Block cipher**
+ - RC6 - Rivest Cipher 6 - **Block cipher**
 
-Let's look at a couple.
+For our purposes, let's look at a few of these:
 
 **DES** - The original block cipher algorithm was developed by IBM in the 70s. However, with a key length of 56 bits, by the 90s it became apparent it wasn't sufficiently secure against brute force attacks with modern computers.
 
 **Triple DES** - Introduced in the late 90s, Triple DES employs 3 keys with a strength of 168 bits. But this comes at a price: slow performance.
 
-**AES** - Replacing DES in the early 2000s, it features a block size of 128 or 256 bits and three key length options: 128, 192, and 256.
+**AES** - Replacing DES in the early 2000s, AES features a block size of 128 or 256 bits and three key length options: 128, 192, and 256.
 
 # Asymmetric Key Encryption
-As you can probably surmise, symmetric key encryption has its limitations. How does one exactly get the secret key to the recipient securely?  **Asymmetric Key Encryption** aims to solve some of the issues that arise from symmetric key encryption. Lets use a mailbox as an analogy. The mailbox is available to the public which represents the public key. Everyone who knows the address can reach the mailbox and put a package in it. However, only the owner has a key to open it and access the packages. Let's get a bit more technical since asymmetric key encryption is widely used in HTTPS, Bitcoin, PGP (to securely send emails) and SSH.
+As you can probably surmise, symmetric key encryption has its limitations. For instance, how does one get the secret key to the recipient securely? Or how does one keep both the sender's and recipient's data from being completely compromised with the use of 1 secret key?  **Asymmetric Key Encryption** aims to solve some of the issues that arise from symmetric key encryption. Let's use a mailbox as an analogy. The mailbox is available to the public which represents the public key. Everyone who knows the address can reach the mailbox and put a package in it. However, only the owner has a key to open it and access the packages. Let's get a bit more technical since asymmetric key encryption is widely used in HTTPS, Bitcoin, PGP (to securely send emails) and SSH.
 
 Both parties involved must generate key pairs on their computers: a public key and a private key. Lets say Alice wants to encrypt a message for Bob. They first start by exchanging their public keys. Alice takes Bobs public key and encrypts the message. She then sends the encrypted message to Bob who uses his private key to unlock it and read it. Even Alice would not be able to decrypt the message because she does not have Bobs private key. The strength of asymmetric encryption now lies with Alice and Bob to securely store their private keys.
 
@@ -89,7 +96,7 @@ Both parties involved must generate key pairs on their computers: a public key a
 
 
 
-Some examples of asymmetric key encryption algorithms are:
+Following are a few examples of asymmetric key encryption algorithms:
 
  - Diffie-Hellman key exchange
  - RSA - Rivest–Shamir–Adleman
@@ -111,8 +118,9 @@ Lets take a closer look.
 1. **What is the goal of Cryptography?**
 - to ensure the confidentiality and integrity of any data or system. The content and images must remain private between the sending and the receiving parties; while they are in transit across the Internet, assurances must be provided that they will remain intact and not altered in any way.
 
-2. **What are symmetric and asymmestric key systems?**
+2. **What are the primary differences between symmetric and asymmetric key systems?**
 - A symmetric key system uses only the private key, and the asymmetric key system makes use of both the public key and the private key.
+- Symmetric encryption is fast in execution where as asymmestric encryption is slow due to high computations.
 
 3. **What are the mathematical algorithms used in asymmetric cryptography?**
 - RSA, Diffie-Hellman, ECC
