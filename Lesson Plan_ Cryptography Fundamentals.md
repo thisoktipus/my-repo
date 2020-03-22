@@ -42,6 +42,7 @@ The **Caesar cipher** is a substitution cipher in which letters change during en
 **Vigenere cipher** is a method of encrypting alphabetic text by employing a series of interwoven Caesar ciphers based on the letters of a keyword. It uses a simple form of polyalphabetic substitution. A **polyalphabetic substitution** is any cipher based on using multiple substitution alphabets. The encryption is done using a Vigenere Square. For example, if one wanted to encrypt the sentance, "Bob went to the store" with the **key** being **dog**, they would decrypt as follows:
 
 **BOB WENT TO THE  STORE**
+
 **DOG DOGD OG DOG DOGDO**
 
 Next, consult the Vigenere square and you'll match B with D, O with O, B with G and so on. The finished product will look like this:
