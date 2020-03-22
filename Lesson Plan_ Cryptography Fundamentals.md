@@ -99,6 +99,7 @@ Some examples of asymmetric key encryption algorithms are:
 Lets take a closer look.
 
 **Diffie-Hellman** - The Diffie-Hellman key exchange is an important milestone in the world of cryptography and is still widely used today. It allows two parties who have not met to securely establish a key which they can use to secure their connection. Basically you will exchange public variables and combine them with private variables you've kept hidden so that both parties can create the same key.
+
 ![Diffie-Hellman Diagram](https://i.stack.imgur.com/n4jBE.png)
 
 
@@ -107,11 +108,11 @@ Lets take a closer look.
 **ECC** - ECC is a relatively new algorithm that creates encryption keys based on using points on a curve to define the public and private keys. 
 
 # Potential Interview Questions
-1. What is the goal of Cryptography?
-to ensure the confidentiality and integrity of any data or system. The content and images must remain private between the sending and the receiving parties; while they are in transit across the Internet, assurances must be provided that they will remain intact and not altered in any way.
+1. **What is the goal of Cryptography?**
+- to ensure the confidentiality and integrity of any data or system. The content and images must remain private between the sending and the receiving parties; while they are in transit across the Internet, assurances must be provided that they will remain intact and not altered in any way.
 
-2. What are symmetric and asymmestric key systems?
-A symmetric key system uses only the private key, and the asymmetric key system makes use of both the public key and the private key.
+2. **What are symmetric and asymmestric key systems?**
+- A symmetric key system uses only the private key, and the asymmetric key system makes use of both the public key and the private key.
 
-3. What are the mathematical algorithms used in asymmetric cryptography?
-RSA, Diffie-Hellman, ECC
+3. **What are the mathematical algorithms used in asymmetric cryptography?**
+- RSA, Diffie-Hellman, ECC
