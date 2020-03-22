@@ -17,6 +17,7 @@ By the end of this lesson we will be able to define and understand:
 	 - Block Algorithms
 	 - Streaming Algorithms
  - Asymmetric Key Encryption
+ - Potential Interview Questions
 
 
 ## Goals of Cryptography
@@ -72,14 +73,16 @@ Some examples of symmetric key encryption algorithms are:
 
 Let's look at a couple.
 
-**DES** - The original block cipher algorithm was developed by IBM in the 70s. However, with a key length of 56 bits, by the 90s it became apparent it wasn't sufficiently secure against brute force attacks with modern computers. 
-**Triple DES** - Introduced in the late 90s Triple DES employs 3 keys with a strength of 168 bits. But this comes at a price. Slow performance. 
+**DES** - The original block cipher algorithm was developed by IBM in the 70s. However, with a key length of 56 bits, by the 90s it became apparent it wasn't sufficiently secure against brute force attacks with modern computers.
+
+**Triple DES** - Introduced in the late 90s, Triple DES employs 3 keys with a strength of 168 bits. But this comes at a price: slow performance.
+
 **AES** - Replacing DES in the early 2000s, it features a block size of 128 or 256 bits and three key length options: 128, 192, and 256.
 
 # Asymmetric Key Encryption
 As you can probably surmise, symmetric key encryption has its limitations. How does one exactly get the secret key to the recipient securely?  **Asymmetric Key Encryption** aims to solve some of the issues that arise from symmetric key encryption. Lets use a mailbox as an analogy. The mailbox is available to the public which represents the public key. Everyone who knows the address can reach the mailbox and put a package in it. However, only the owner has a key to open it and access the packages. Let's get a bit more technical since asymmetric key encryption is widely used in HTTPS, Bitcoin, PGP (to securely send emails) and SSH.
 
-Both parties involved must generate key pairs on their computers. A public key and a private key. Lets say Alice wants to encrypt a message for Bob. They first start by exchanging their public keys. Alice takes Bobs public key and encrypts the message. She then sends the encrypted message to Bob who uses his private key to unlock it and read it. Even Alice would not be able to decrypt the message because she does not have Bobs private key. The strength of asymmetric encryption now lies with Alice and Bob to securely store their private keys.
+Both parties involved must generate key pairs on their computers: a public key and a private key. Lets say Alice wants to encrypt a message for Bob. They first start by exchanging their public keys. Alice takes Bobs public key and encrypts the message. She then sends the encrypted message to Bob who uses his private key to unlock it and read it. Even Alice would not be able to decrypt the message because she does not have Bobs private key. The strength of asymmetric encryption now lies with Alice and Bob to securely store their private keys.
 
 
 ![Asymmetric Encryption Diagram](https://www.cheapsslshop.com/blog/wp-content/uploads/2017/09/Asymmetric-Encryption.png)
@@ -95,10 +98,20 @@ Some examples of asymmetric key encryption algorithms are:
 
 Lets take a closer look.
 
-**Diffie-Hellman** - The Diffie-Hellman key exchange is an important milestone in the world of cryptography and is still widely used today. It allows two parties who have not met to securely establish a key which they can use to secure their connection. Basically you will exchange public variables and combined them with private variables you've kept hidden so that both parties can create the same key.
+**Diffie-Hellman** - The Diffie-Hellman key exchange is an important milestone in the world of cryptography and is still widely used today. It allows two parties who have not met to securely establish a key which they can use to secure their connection. Basically you will exchange public variables and combine them with private variables you've kept hidden so that both parties can create the same key.
 ![Diffie-Hellman Diagram](https://i.stack.imgur.com/n4jBE.png)
 
 
 **RSA** - RSA is still a worldwide standard used today. In this cryptosystem, the encryption key is public and is distinct from the decryption key which is private. The magic behind RSA lies within the difficulty of factoring the product of two large prime numbers. RSA is less commonly used because of it being a slow algorithm.
 
 **ECC** - ECC is a relatively new algorithm that creates encryption keys based on using points on a curve to define the public and private keys. 
+
+# Potential Interview Questions
+1. What is the goal of Cryptography?
+to ensure the confidentiality and integrity of any data or system. The content and images must remain private between the sending and the receiving parties; while they are in transit across the Internet, assurances must be provided that they will remain intact and not altered in any way.
+
+2. What are symmetric and asymmestric key systems?
+A symmetric key system uses only the private key, and the asymmetric key system makes use of both the public key and the private key.
+
+3. What are the mathematical algorithms used in asymmetric cryptography?
+RSA, Diffie-Hellman, ECC
